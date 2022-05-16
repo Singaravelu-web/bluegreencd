@@ -56,3 +56,10 @@ jobs:
           export SHELL=/bin/bash
           eval $(minikube -p minikube podman-env)
           minikube ssh podman images
+      - name: Create Namespace
+        run: kubectl create namespace ns-bluegreendeployment
+      - name: Create Namespace
+        run: kubectl apply -f ./kubernetes/blue-deploy.yml -n ns-bluegreendeployment
+      - name: Create Namespace
+        run: kubectl get deployment -n ns-bluegreendeployment
+        
