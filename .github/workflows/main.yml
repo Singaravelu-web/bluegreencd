@@ -67,5 +67,5 @@ jobs:
       - name: Deploy the Service yaml
         run: kubectl apply -f ./kubernetes/service.yaml -n ns-bluegreendeployment
       - name: List all ns-bluegreendeployment deployments
-        run: kubectl get all ns-bluegreendeployment
+        run: kubectl get all -n ns-bluegreendeployment
         
