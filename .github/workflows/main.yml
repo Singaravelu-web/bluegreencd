@@ -59,7 +59,7 @@ jobs:
       - name: Create Namespace
         run: kubectl create namespace ns-bluegreendeployment
       - name: Create Namespace
-        run: kubectl apply -f ./kubernetes/blue-deploy.yml -n ns-bluegreendeployment
+        run: kubectl apply -f ./kubernetes/blue-deploy.yaml -n ns-bluegreendeployment
       - name: Create Namespace
         run: kubectl get deployment -n ns-bluegreendeployment
         
