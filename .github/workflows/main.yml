@@ -58,8 +58,14 @@ jobs:
           minikube ssh podman images
       - name: Create Namespace
         run: kubectl create namespace ns-bluegreendeployment
-      - name: Create Namespace
+      - name: Deploy Blue Deployment
         run: kubectl apply -f ./kubernetes/blue-deploy.yaml -n ns-bluegreendeployment
-      - name: Create Namespace
+      - name: Display Blue Deployment details
         run: kubectl get deployment -n ns-bluegreendeployment
+      - name: Green Deployment
+        run: kubectl apply -f ./kubernetes/green-deploy.yaml -n ns-bluegreendeployment
+      - name: Deploy the Service yaml
+        run: kubectl apply -f ./kubernetes/service.yaml -n ns-bluegreendeployment
+      - name: List all ns-bluegreendeployment deployments
+        run: kubectl get all ns-bluegreendeployment
         
