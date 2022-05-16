@@ -19,14 +19,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
-      uses: Singaravelu-web/bluegreencd@main
+      uses: medyagh/setup-minikube@master
     - name: Try the cluster !
       run: kubectl get pods -A
     - name: Build image
       run: |
         export SHELL=/bin/bash
         eval $(minikube -p minikube docker-env)
-        docker build -f ./nginx-html/DockerfileBlue -t local/example .
+        docker build -f ./Dockerfile -t local/example .
         echo -n "verifying images:"
         docker images        
     - name: Deploy to minikube
