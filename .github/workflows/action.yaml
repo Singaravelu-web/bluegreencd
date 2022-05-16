@@ -22,6 +22,11 @@ jobs:
       uses: medyagh/setup-minikube@master
     - name: Try the cluster !
       run: kubectl get pods -A
+    - name: Creating name space !
+      run: kubectl create namespace ns-demorunnerns
+    - name: List name spaces !
+      run: kubectl get namespaces
+      
     - name: Build image
       run: |
         export SHELL=/bin/bash
