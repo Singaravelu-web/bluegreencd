@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: start minikube
       id: minikube
-      uses: Singaravelu-web/bluegreencd@main
+      uses: medyagh/setup-minikube@master
     # now you can run kubectl to see the pods in the cluster
     - name: kubectl
       run: kubectl get pods -A
