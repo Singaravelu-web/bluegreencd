@@ -32,7 +32,7 @@ jobs:
 
       - name: start minikube
         id: minikube
-        uses: bluegreencd/setup-minikube@main
+        uses: bluegreencd/setup-minikube@latest
         
 
       # Runs a set of commands using the runners shell
