@@ -66,9 +66,6 @@ jobs:
         run: kubectl apply -f ./kubernetes/green-deploy.yaml -n ns-bluegreendeployment
       - name: Deploy the Service yaml
         run: kubectl apply -f ./kubernetes/service.yaml -n ns-bluegreendeployment
-      - name: Sleep for 120 seconds
-        run: Start-Sleep -s 120
-        shell: powershell        
       - name: List all ns-bluegreendeployment deployments
         run: kubectl get all -n ns-bluegreendeployment
         
